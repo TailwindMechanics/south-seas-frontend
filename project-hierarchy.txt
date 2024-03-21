@@ -1,0 +1,30 @@
+south-seas-frontend
+├─ .env
+├─ .eslintrc.cjs
+├─ .gitignore
+├─ .prettierignore
+├─ .prettierrc
+├─ autoCommentPath.cjs
+├─ index.html
+├─ package.json
+├─ pnpm-lock.yaml
+├─ postcss.config.cjs
+├─ project-hierarchy.txt
+├─ public
+│  └─ vite.svg
+├─ README.md
+├─ root
+├─ rootGrouper.cjs
+├─ src
+│  ├─ App.tsx
+│  ├─ assets
+│  │  └─ react.svg
+│  ├─ components
+│  │  └─ MyToggle.tsx
+│  ├─ index.css
+│  ├─ main.tsx
+│  └─ vite-env.d.ts
+├─ tailwind.config.js
+├─ tsconfig.json
+├─ tsconfig.node.json
+└─ vite.config.ts

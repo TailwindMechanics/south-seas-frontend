@@ -4,6 +4,9 @@ FROM node:latest as build
 # Set working directory
 WORKDIR /app
 
+# Install pnpm
+RUN npm install -g pnpm
+
 # Copy package.json and package-lock.json to the working directory
 COPY package.json .
 COPY pnpm-lock.yaml .

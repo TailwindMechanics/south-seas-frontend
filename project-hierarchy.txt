@@ -5,6 +5,7 @@ south-seas-frontend
 ├─ .prettierignore
 ├─ .prettierrc
 ├─ autoCommentPath.cjs
+├─ Dockerfile
 ├─ index.html
 ├─ package.json
 ├─ pnpm-lock.yaml
@@ -23,6 +24,8 @@ south-seas-frontend
 │  │  └─ MyToggle.tsx
 │  ├─ index.css
 │  ├─ main.tsx
+│  ├─ types
+│  │  └─ database.types.ts
 │  └─ vite-env.d.ts
 ├─ tailwind.config.js
 ├─ tsconfig.json

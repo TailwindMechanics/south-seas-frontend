@@ -1,22 +1,27 @@
 //path: src\components\PixiJsCanvas.tsx
 
 import { Stage, Container } from "@pixi/react";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 import { AceDiamonds, TwoHearts } from "../data/ImageUrls";
+import { SceneRow } from "../types/database.types";
+import { SceneName } from "../data/SceneInfo";
+import supaClient from "../utils/SupaClient";
 import { X, Y } from "../utils/Unit";
 import Card from "./Card";
-import supaClient from "../utils/SupaClient";
 
 const PixiJsCanvas = () => {
+  const [payload, setPayload] = useState<SceneRow>();
+
   useEffect(() => {
     const realtimeScene = supaClient
       .channel("realtime_scene")
       .on(
         "postgres_changes",
-        { event: "*", schema: "public", table: "cards_scene_7" },
+        { event: "*", schema: "public", table: SceneName },
         (payload) => {
           console.log(`>>> Received payload:`, payload);
+          setPayload(payload.new as SceneRow);
         },
       )
       .subscribe();
@@ -35,7 +40,7 @@ const PixiJsCanvas = () => {
         O
       </div>
       <div className="center absolute left-1/2 top-1/2 flex -translate-x-1/2 -translate-y-1/2 flex-col text-center font-bold text-white">
-        <span>Hello</span>
+        <span>{payload?.rank}</span>
         <span>World</span>
       </div>
       <Stage

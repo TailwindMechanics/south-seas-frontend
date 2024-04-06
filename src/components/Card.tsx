@@ -1,6 +1,9 @@
+//path: src\components\Card.tsx
+
 import { Container, Sprite } from "@pixi/react";
-import { Vector2 } from "../types/types";
 import { FC } from "react";
+
+import { Vector2 } from "../types/types";
 
 interface CardProps {
   suit: string;

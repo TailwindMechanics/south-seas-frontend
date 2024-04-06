@@ -1,4 +1,4 @@
-//path: src\Utils\Unit.ts
+//path: src\utils\Unit.ts
 
 export function X(input: number): number {
   const scaleFactor = innerWidth / 100 / 2;

@@ -1,14 +1,33 @@
 //path: src\components\PixiJsCanvas.tsx
 
 import { Stage, Container } from "@pixi/react";
-import { X, Y } from "../Utils/Unit";
+import { useEffect } from "react";
+
+import { AceDiamonds, TwoHearts } from "../data/ImageUrls";
+import { X, Y } from "../utils/Unit";
 import Card from "./Card";
+import supaClient from "../utils/SupaClient";
 
 const PixiJsCanvas = () => {
-  const twoHearts =
-    "https://upload.wikimedia.org/wikipedia/commons/thumb/3/39/2_of_hearts.svg/418px-2_of_hearts.svg.png";
-  const aceDiamonds =
-    "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Ace_of_diamonds.svg/418px-Ace_of_diamonds.svg.png"; //upload.wikimedia.org/wikipedia/commons/thumb/3/39/2_of_hearts.svg/418px-2_of_hearts.svg.png";
+  useEffect(() => {
+    const realtimeScene = supaClient
+      .channel("realtime_scene")
+      .on(
+        "postgres_changes",
+        { event: "*", schema: "public", table: "cards_scene_7" },
+        (payload) => {
+          console.log(`>>> Received payload:`, payload);
+        },
+      )
+      .subscribe();
+
+    console.log(">>> Channel subscription created");
+
+    return () => {
+      realtimeScene.unsubscribe();
+      console.log(">>> Channel subscription terminated");
+    };
+  }, []);
 
   return (
     <>
@@ -27,15 +46,15 @@ const PixiJsCanvas = () => {
           <Card
             suit="hearts"
             rank="2"
-            imageUrl={twoHearts}
-            position={{ x: X(-10), y: Y(0) }}
+            imageUrl={TwoHearts}
+            position={{ x: X(1), y: Y(0) }}
             scale={0.2}
           />
           <Card
             suit="diamonds"
             rank="Ace"
-            imageUrl={aceDiamonds}
-            position={{ x: X(10), y: Y(0) }}
+            imageUrl={AceDiamonds}
+            position={{ x: X(-10), y: Y(0) }}
             scale={0.2}
           />
         </Container>

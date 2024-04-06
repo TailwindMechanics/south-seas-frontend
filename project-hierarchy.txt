@@ -24,12 +24,15 @@ south-seas-frontend
 │  │  ├─ Card.tsx
 │  │  ├─ MyToggle.tsx
 │  │  └─ PixiJsCanvas.tsx
+│  ├─ data
+│  │  └─ ImageUrls.ts
 │  ├─ index.css
 │  ├─ main.tsx
 │  ├─ types
 │  │  ├─ database.types.ts
 │  │  └─ types.d.ts
-│  ├─ Utils
+│  ├─ utils
+│  │  ├─ SupabaseClient.ts
 │  │  └─ Unit.ts
 │  └─ vite-env.d.ts
 ├─ tailwind.config.js

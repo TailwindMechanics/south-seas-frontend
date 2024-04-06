@@ -12,8 +12,10 @@
   "dependencies": {
     "@headlessui/react": "^1.7.18",
     "@headlessui/tailwindcss": "^0.2.0",
+    "@pixi/react": "^7.1.2",
     "@supabase/supabase-js": "^2.39.8",
     "add": "^2.0.6",
+    "pixi.js": "^8.0.5",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "rxjs": "^7.8.1"

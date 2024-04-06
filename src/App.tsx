@@ -1,11 +1,11 @@
 //path: src\App.tsx
 
-import MyToggle from "./components/MyToggle";
+import PixiJsCanvas from "./components/PixiJsCanvas";
 
 function App() {
   return (
-    <div className="h-full w-full bg-zinc-800">
-      <MyToggle />
+    <div className="h-full w-full bg-red-500">
+      <PixiJsCanvas />
     </div>
   );
 }

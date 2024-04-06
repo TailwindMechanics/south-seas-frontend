@@ -1,27 +1,22 @@
 //path: src\types\database.types.ts
 
-export interface Movement {
-  speed: number;
-  direction: number;
-}
-
-export interface Vector3 {
-  x: number;
-  y: number;
-  z: number;
+export interface Player {
+  name: string;
 }
 
 export interface Transform {
-  position: Vector3;
-  rotation: Vector3;
-  scale: Vector3;
+  position: number[];
+  rotation: number[];
+  scale: number[];
 }
 
-export interface Entity {
-  id: string;
+export interface SceneRow {
+  rowId: string;
   tags: string[] | null;
-  transform: Transform;
-  movement: Movement | null;
-  created_at: string;
-  updated_at: string;
+  suit: string | null;
+  rank: string | null;
+  owner: Player | null;
+  player: Player | null;
+  transform: Transform | null;
+  imageUrl: string | null;
 }

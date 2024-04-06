@@ -21,11 +21,14 @@ south-seas-frontend
 │  ├─ assets
 │  │  └─ react.svg
 │  ├─ components
-│  │  └─ MyToggle.tsx
+│  │  ├─ MyToggle.tsx
+│  │  └─ PixiJsCanvas.tsx
 │  ├─ index.css
 │  ├─ main.tsx
 │  ├─ types
 │  │  └─ database.types.ts
+│  ├─ Utils
+│  │  └─ Unit.ts
 │  └─ vite-env.d.ts
 ├─ tailwind.config.js
 ├─ tsconfig.json

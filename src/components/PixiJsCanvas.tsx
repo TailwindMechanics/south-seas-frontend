@@ -1,6 +1,6 @@
 //path: src\components\PixiJsCanvas.tsx
 
-import { Stage, Container, Sprite } from "@pixi/react";
+import { Stage, Container } from "@pixi/react";
 import { X, Y } from "../Utils/Unit";
 import Card from "./Card";
 
@@ -12,7 +12,10 @@ const PixiJsCanvas = () => {
 
   return (
     <>
-      <div className="center absolute left-1/2 top-1/2 flex flex-col text-center font-bold text-white">
+      <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 transform text-center text-red-500">
+        O
+      </div>
+      <div className="center absolute left-1/2 top-1/2 flex -translate-x-1/2 -translate-y-1/2 flex-col text-center font-bold text-white">
         <span>Hello</span>
         <span>World</span>
       </div>
@@ -21,9 +24,20 @@ const PixiJsCanvas = () => {
         height={window.innerHeight}
         options={{ background: 0x1099bb }}>
         <Container x={window.innerWidth / 2} y={window.innerHeight / 2}>
-          <Card suit="hearts" rank="2" imageUrl={twoHearts} />
-          {/* <Sprite image={twoHearts} scale={0.2} x={X(15)} y={Y(0)} />
-          <Sprite image={aceDiamonds} scale={0.2} x={X(-15)} y={Y(0)} /> */}
+          <Card
+            suit="hearts"
+            rank="2"
+            imageUrl={twoHearts}
+            position={{ x: X(-10), y: Y(0) }}
+            scale={0.2}
+          />
+          <Card
+            suit="diamonds"
+            rank="Ace"
+            imageUrl={aceDiamonds}
+            position={{ x: X(10), y: Y(0) }}
+            scale={0.2}
+          />
         </Container>
       </Stage>
     </>

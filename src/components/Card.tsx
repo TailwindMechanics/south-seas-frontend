@@ -1,7 +1,6 @@
-import { Sprite } from "@pixi/react";
-import { FC } from "react";
+import { Container, Sprite } from "@pixi/react";
 import { Vector2 } from "../types/types";
-import { X, Y } from "../Utils/Unit";
+import { FC } from "react";
 
 interface CardProps {
   suit: string;
@@ -9,15 +8,19 @@ interface CardProps {
   children?: React.ReactNode;
   imageUrl: string;
   position: Vector2;
-  scale: Vector2;
+  scale: number;
 }
 
 const Card: FC<CardProps> = (props) => {
   return (
-    <Sprite
-      x={X(props.position.x)}
-      y={Y(props.position.y)}
-      image={props.imageUrl}></Sprite>
+    <Container>
+      <Sprite
+        x={props.position.x}
+        y={props.position.y}
+        scale={props.scale}
+        image={props.imageUrl}
+      />
+    </Container>
   );
 };
 

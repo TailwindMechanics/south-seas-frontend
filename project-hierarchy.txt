@@ -21,12 +21,14 @@ south-seas-frontend
 │  ├─ assets
 │  │  └─ react.svg
 │  ├─ components
+│  │  ├─ Card.tsx
 │  │  ├─ MyToggle.tsx
 │  │  └─ PixiJsCanvas.tsx
 │  ├─ index.css
 │  ├─ main.tsx
 │  ├─ types
-│  │  └─ database.types.ts
+│  │  ├─ database.types.ts
+│  │  └─ types.d.ts
 │  ├─ Utils
 │  │  └─ Unit.ts
 │  └─ vite-env.d.ts

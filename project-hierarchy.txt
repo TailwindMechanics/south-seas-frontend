@@ -12,20 +12,21 @@ south-seas-frontend
 ├─ postcss.config.cjs
 ├─ project-hierarchy.txt
 ├─ public
-│  └─ vite.svg
 ├─ README.md
 ├─ root
 ├─ rootGrouper.cjs
 ├─ src
 │  ├─ App.tsx
-│  ├─ assets
-│  │  └─ react.svg
 │  ├─ components
-│  │  ├─ Card.tsx
-│  │  ├─ MyToggle.tsx
-│  │  └─ PixiJsCanvas.tsx
+│  │  ├─ pixi
+│  │  │  ├─ PixiStage.tsx
+│  │  │  └─ PlayingCard.tsx
+│  │  └─ ui
+│  │     ├─ Toggle.tsx
+│  │     └─ UiRoot.tsx
 │  ├─ data
-│  │  └─ ImageUrls.ts
+│  │  ├─ PlayingCardUrls.ts
+│  │  └─ SceneInfo.ts
 │  ├─ index.css
 │  ├─ main.tsx
 │  ├─ types

@@ -1,11 +1,13 @@
 //path: src\App.tsx
 
-import PixiJsCanvas from "./components/PixiJsCanvas";
+import PixiStage from "./components/pixi/PixiStage";
+import UiRoot from "./components/ui/UiRoot";
 
 function App() {
   return (
     <div className="h-full w-full bg-red-500">
-      <PixiJsCanvas />
+      <UiRoot />
+      <PixiStage />
     </div>
   );
 }

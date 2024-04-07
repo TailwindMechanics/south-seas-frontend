@@ -1,12 +1,11 @@
-//path: src\components\MyToggle.tsx
+//path: src\components\ui\Toggle.tsx
 
 import { Switch } from "@headlessui/react";
 import { useState } from "react";
 import { FC } from "react";
 
-const MyToggle: FC = () => {
+const Toggle: FC = () => {
   const [enabled, setEnabled] = useState(false);
-
   return (
     <Switch
       checked={enabled}
@@ -24,4 +23,4 @@ const MyToggle: FC = () => {
   );
 };
 
-export default MyToggle;
+export default Toggle;

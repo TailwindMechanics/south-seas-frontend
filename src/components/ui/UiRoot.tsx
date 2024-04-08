@@ -2,15 +2,14 @@
 
 import { useEffect, useState } from "react";
 
-import { supabaseClient } from "../../utils/SupabaseClient";
+import { SupabaseClient } from "../../utils/SupabaseClient";
 import { SceneRow } from "../../types/database.types";
 import { SceneName } from "../../data/SceneInfo";
 
 export const UiRoot = () => {
   const [payload, setPayload] = useState<SceneRow>();
   useEffect(() => {
-    const realtimeScene = supabaseClient
-      .channel("realtime_scene")
+    const realtimeScene = SupabaseClient.channel("realtime_scene")
       .on(
         "postgres_changes",
         { event: "*", schema: "public", table: SceneName },

@@ -4,7 +4,7 @@ import { User } from "@supabase/supabase-js";
 import { Tab } from "@headlessui/react";
 import { FC, useState } from "react";
 
-import { supabaseClient } from "../../utils/SupabaseClient";
+import { SupabaseClient } from "../../utils/SupabaseClient";
 import { Button } from "./Button";
 
 interface LoginProps {}
@@ -17,7 +17,7 @@ export const Login: FC<LoginProps> = () => {
   const [selectedIndex, setSelectedIndex] = useState(0);
 
   async function onLoginClick() {
-    const supabase = supabaseClient;
+    const supabase = SupabaseClient;
     const response = await supabase.auth.signInWithPassword({
       email,
       password,
@@ -32,7 +32,7 @@ export const Login: FC<LoginProps> = () => {
   }
 
   async function onSignupClick() {
-    const supabase = supabaseClient;
+    const supabase = SupabaseClient;
     const response = await supabase.auth.signUp({ email, password });
 
     if (response.error) {
@@ -44,7 +44,7 @@ export const Login: FC<LoginProps> = () => {
   }
 
   async function onLogoutClick() {
-    const supabase = supabaseClient;
+    const supabase = SupabaseClient;
     const { error } = await supabase.auth.signOut();
 
     if (error) {

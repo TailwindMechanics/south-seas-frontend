@@ -1,12 +1,15 @@
+//path: src\components\ui\Login.tsx
+
 import { User } from "@supabase/supabase-js";
-import { FC, useState } from "react";
 import { Tab } from "@headlessui/react";
-import supabaseClient from "../../utils/SupabaseClient";
-import Button from "./Button";
+import { FC, useState } from "react";
+
+import { supabaseClient } from "../../utils/SupabaseClient";
+import { Button } from "./Button";
 
 interface LoginProps {}
 
-const Login: FC<LoginProps> = () => {
+export const Login: FC<LoginProps> = () => {
   const [user, setUser] = useState<User | null>(null);
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
@@ -140,5 +143,3 @@ const Login: FC<LoginProps> = () => {
     </Tab.Group>
   );
 };
-
-export default Login;

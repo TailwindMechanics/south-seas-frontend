@@ -22,6 +22,8 @@ south-seas-frontend
 │  │  │  ├─ PixiStage.tsx
 │  │  │  └─ PlayingCard.tsx
 │  │  └─ ui
+│  │     ├─ Button.tsx
+│  │     ├─ Login.tsx
 │  │     ├─ Toggle.tsx
 │  │     └─ UiRoot.tsx
 │  ├─ data

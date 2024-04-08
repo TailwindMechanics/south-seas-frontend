@@ -13,7 +13,7 @@ interface CardProps {
   position: Vector2;
 }
 
-const PlayingCard: FC<CardProps> = (props) => {
+export const PlayingCard: FC<CardProps> = (props) => {
   return (
     <Sprite
       x={props.position.x}
@@ -24,5 +24,3 @@ const PlayingCard: FC<CardProps> = (props) => {
     />
   );
 };
-
-export default PlayingCard;

@@ -2,11 +2,11 @@
 
 import { useEffect, useState } from "react";
 
-import supabaseClient from "../../utils/SupabaseClient";
+import { supabaseClient } from "../../utils/SupabaseClient";
 import { SceneRow } from "../../types/database.types";
 import { SceneName } from "../../data/SceneInfo";
 
-const UiRoot = () => {
+export const UiRoot = () => {
   const [payload, setPayload] = useState<SceneRow>();
   useEffect(() => {
     const realtimeScene = supabaseClient
@@ -39,5 +39,3 @@ const UiRoot = () => {
     </>
   );
 };
-
-export default UiRoot;

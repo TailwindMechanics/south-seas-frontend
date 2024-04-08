@@ -1,3 +1,5 @@
+//path: src\components\ui\Button.tsx
+
 import { FC, ReactNode } from "react";
 
 interface ButtonProps {
@@ -6,7 +8,7 @@ interface ButtonProps {
   className?: string;
 }
 
-const Button: FC<ButtonProps> = ({ onClick, children, className }) => {
+export const Button: FC<ButtonProps> = ({ onClick, children, className }) => {
   return (
     <button
       onClick={onClick}
@@ -15,5 +17,3 @@ const Button: FC<ButtonProps> = ({ onClick, children, className }) => {
     </button>
   );
 };
-
-export default Button;

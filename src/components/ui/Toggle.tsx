@@ -4,7 +4,7 @@ import { Switch } from "@headlessui/react";
 import { useState } from "react";
 import { FC } from "react";
 
-const Toggle: FC = () => {
+export const Toggle: FC = () => {
   const [enabled, setEnabled] = useState(false);
   return (
     <Switch
@@ -22,5 +22,3 @@ const Toggle: FC = () => {
     </Switch>
   );
 };
-
-export default Toggle;

@@ -3,10 +3,10 @@
 import { Stage, Container } from "@pixi/react";
 
 import { AceDiamonds, TwoHearts } from "../../data/PlayingCardUrls";
+import { PlayingCard } from "./PlayingCard";
 import { X, Y } from "../../utils/Unit";
-import PlayingCard from "./PlayingCard";
 
-const PixiStage = () => {
+export const PixiStage = () => {
   return (
     <>
       <Stage
@@ -34,5 +34,3 @@ const PixiStage = () => {
     </>
   );
 };
-
-export default PixiStage;

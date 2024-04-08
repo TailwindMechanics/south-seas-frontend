@@ -1,6 +1,6 @@
 //path: src\App.tsx
 
-import Login from "./components/ui/Login";
+import { Login } from "./components/ui/Login";
 
 function App() {
   return (

@@ -57,29 +57,10 @@ export const Login = () => {
     }, 3000);
   }
 
-  async function onLogoutClick() {
-    const supabase = SupabaseClient;
-    const response = await supabase.auth.signOut();
-
-    if (response.error) {
-      SetStatusAndClear(response.error.message);
-    } else {
-      console.log("User signed out");
-      setUser(null);
-    }
-  }
-
   return (
     <>
       <Tab.Group selectedIndex={selectedIndex} onChange={setSelectedIndex}>
-        {user ? (
-          <>
-            <Button className="w-full" onClick={onLogoutClick}>
-              Logout
-            </Button>
-            <span>Logged in as: {user.email}</span>
-          </>
-        ) : (
+        {!user && (
           <div className="h-full w-full flex-col items-center justify-center">
             <Tab.List className="flex w-full justify-around rounded-t-lg">
               <Tab

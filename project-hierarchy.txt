@@ -1,4 +1,5 @@
 south-seas-frontend
+├─ .dockerignore
 ├─ .env
 ├─ .eslintrc.cjs
 ├─ .gitignore
@@ -12,6 +13,7 @@ south-seas-frontend
 ├─ postcss.config.cjs
 ├─ project-hierarchy.txt
 ├─ public
+│  └─ favicon.png
 ├─ README.md
 ├─ root
 ├─ rootGrouper.cjs
@@ -23,12 +25,20 @@ south-seas-frontend
 │  │  │  └─ PlayingCard.tsx
 │  │  └─ ui
 │  │     ├─ Button.tsx
+│  │     ├─ LoggedIn.tsx
+│  │     ├─ LoggedOut.tsx
 │  │     ├─ Login.tsx
+│  │     ├─ LogoutButton.tsx
+│  │     ├─ MainMenu.tsx
+│  │     ├─ MenuItem.tsx
 │  │     ├─ Toggle.tsx
 │  │     └─ UiRoot.tsx
 │  ├─ data
 │  │  ├─ PlayingCardUrls.ts
 │  │  └─ SceneInfo.ts
+│  ├─ hooks
+│  │  ├─ AuthProvider.tsx
+│  │  └─ useAuth.tsx
 │  ├─ index.css
 │  ├─ main.tsx
 │  ├─ types

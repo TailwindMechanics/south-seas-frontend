@@ -1,20 +1,11 @@
-FROM node:latest as build
+# Use the official Nginx image as the base image
+FROM nginx:latest
 
-WORKDIR /app
-COPY . /app
+# Set the working directory in the container
+WORKDIR /usr/share/nginx/html
 
-RUN npm install -g pnpm
+# Copy the built files from the local "dist" directory to the container
+COPY dist/ .
 
-# Add debug commands here
-RUN pwd
-RUN ls -al /app/node_modules/typescript
-
-RUN pnpm install
-RUN pnpm run build
-
-FROM ubuntu
-RUN apt-get update
-RUN apt-get install nginx -y
-COPY --from=build /app/dist /var/www/html/
+# Expose the desired port
 EXPOSE 80
-CMD ["nginx","-g","daemon off;"]

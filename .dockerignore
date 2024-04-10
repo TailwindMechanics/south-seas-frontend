@@ -1,4 +1,35 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+
+# Environment variables
+.env
+
+# Dependency directories
 node_modules
-npm-debug.log
-Dockerfile
-.dockerignore
+
+# Build artifacts
+dist
+build
+
+# Cache directories
+.npm
+.pnpm-store
+
+
+# Editor files and directories
+.idea
+.vscode
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Linting and formatting
+.eslintcache
+.prettierrc
+
+# Git files
+.git
+.gitignore

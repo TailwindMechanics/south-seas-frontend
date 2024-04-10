@@ -1,33 +1,26 @@
-# Use official Node.js image as base image
-FROM node:latest as build
+# Use Node.js for build
+FROM node:16-alpine AS build
 
-# Set working directory
 WORKDIR /app
 
 # Install pnpm
 RUN npm install -g pnpm
 
-# Copy package.json and package-lock.json to the working directory
-COPY package.json .
-COPY pnpm-lock.yaml .
-
 # Install dependencies
+COPY package.json pnpm-lock.yaml ./
 RUN pnpm install
 
-# Copy the rest of the application code to the working directory
+# Copy source code
 COPY . .
 
-# Build the application
+# Build app
 RUN pnpm run build
 
-# Use nginx as base image for serving the static files
+# Production image 
 FROM nginx:alpine
 
-# Copy built files from the build stage to nginx's html directory
+# Copy build output
 COPY --from=build /app/dist /usr/share/nginx/html
 
-# Expose port 80
 EXPOSE 80
-
-# Start nginx server
 CMD ["nginx", "-g", "daemon off;"]

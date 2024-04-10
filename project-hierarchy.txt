@@ -1,5 +1,4 @@
 south-seas-frontend
-├─ .dockerignore
 ├─ .env
 ├─ .eslintrc.cjs
 ├─ .gitignore

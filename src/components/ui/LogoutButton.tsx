@@ -9,8 +9,7 @@ import { useAuth } from "../../hooks/useAuth";
 export const LogoutButton: FC = () => {
   const { user } = useAuth();
   const onLogoutClick = async () => {
-    const supabase = SupabaseClient;
-    const response = await supabase.auth.signOut();
+    const response = await SupabaseClient.auth.signOut();
 
     if (response.error) {
       console.error("Error signing out:", response.error.message);

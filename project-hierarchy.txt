@@ -1,4 +1,5 @@
 south-seas-frontend
+├─ .dockerignore
 ├─ .env
 ├─ .eslintrc.cjs
 ├─ .gitignore
@@ -44,8 +45,8 @@ south-seas-frontend
 │  │  ├─ database.types.ts
 │  │  └─ types.d.ts
 │  ├─ utils
-│  │  ├─ SupabaseClient.ts
-│  │  └─ Unit.ts
+│  │  ├─ SupabaseClient.tsx
+│  │  └─ Unit.tsx
 │  └─ vite-env.d.ts
 ├─ tailwind.config.js
 ├─ tsconfig.json

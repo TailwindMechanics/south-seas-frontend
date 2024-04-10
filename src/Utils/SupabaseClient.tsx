@@ -1,4 +1,4 @@
-//path: src\utils\SupabaseClient.ts
+//path: src\utils\SupabaseClient.tsx
 
 import { createClient } from "@supabase/supabase-js";
 

@@ -74,7 +74,7 @@ devDependencies:
     specifier: ^0.5.12
     version: 0.5.12(prettier@3.2.5)
   supabase:
-    specifier: ^1.150.0
+    specifier: ^1.150.0-from-binary
     version: 1.150.0
   tailwindcss:
     specifier: ^3.4.1

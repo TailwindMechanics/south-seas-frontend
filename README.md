@@ -1,8 +1,9 @@
 # Chicane Cards Game Project Brief
 ## Overview
-The primary objective of this project is to create a high-quality multiplayer card game that demonstrates technical skills, code quality, and ability to deliver a polished product in the iGaming industry. The game is built using React and PixiJS for the frontend, ASP.NET for the backend, and Supabase for the database. Additionally, this project will serve as a foundation for the larger South Seas project, a 3D game engine built with wgpu. This project is for demonstration only and is not a commercial product.
+The primary objective of this project is to create a high-quality multiplayer card game that demonstrates technical skills, code quality, and ability to deliver a polished product in the iGaming industry. The game is built using React and PixiJS for the frontend, ASP.NET for the backend, and Supabase for the database and auth. Additionally, this project will serve as a foundation for the larger South Seas project, a 3D web-first game engine built with wgpu. This project is for demonstration only and is not a commercial product.
 ## Author: 
-Seamus Dunne, https://www.linkedin.com/in/s-dunne/
+Seamus Dunne 
+https://www.linkedin.com/in/s-dunne/
 ## Technical Stack
 ### Frontend
 - **React**: JavaScript library for building user interfaces.

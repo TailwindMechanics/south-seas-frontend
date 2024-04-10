@@ -4,7 +4,7 @@ import { User } from "@supabase/supabase-js";
 import { Tab } from "@headlessui/react";
 import { useState } from "react";
 
-import { SupabaseClient } from "../../utils/SupabaseClient";
+import { SbClient } from "../../utils/SbClient";
 import { Button } from "./Button";
 
 export const Login = () => {
@@ -20,8 +20,7 @@ export const Login = () => {
 
     event.preventDefault();
 
-    const supabase = SupabaseClient;
-    const response = await supabase.auth.signInWithPassword({
+    const response = await SbClient.auth.signInWithPassword({
       email,
       password,
     });
@@ -39,8 +38,7 @@ export const Login = () => {
 
     event.preventDefault();
 
-    const supabase = SupabaseClient;
-    const response = await supabase.auth.signUp({ email, password });
+    const response = await SbClient.auth.signUp({ email, password });
 
     if (response.error) {
       SetStatusAndClear(response.error.message);

@@ -45,8 +45,8 @@ south-seas-frontend
 │  │  ├─ database.types.ts
 │  │  └─ types.d.ts
 │  ├─ utils
-│  │  ├─ SupabaseClient.tsx
-│  │  └─ Unit.tsx
+│  │  ├─ SbClient.ts
+│  │  └─ Unit.ts
 │  └─ vite-env.d.ts
 ├─ tailwind.config.js
 ├─ tsconfig.json

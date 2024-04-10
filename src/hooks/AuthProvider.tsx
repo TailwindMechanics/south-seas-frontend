@@ -2,7 +2,8 @@
 
 import { FC, createContext, useEffect, useState } from "react";
 import { User } from "@supabase/supabase-js";
-import { SupabaseClient } from "../utils/SupabaseClient";
+
+import { SbClient } from "../utils/SbClient";
 
 interface AuthContextType {
   user: User | null;
@@ -21,13 +22,13 @@ export const AuthProvider: FC<AuthProviderProps> = (props) => {
 
   useEffect(() => {
     const fetchUser = async () => {
-      const currentUser = await SupabaseClient.auth.getUser();
+      const currentUser = await SbClient.auth.getUser();
       setUser(currentUser.data.user);
     };
 
     fetchUser();
 
-    const { data: authListener } = SupabaseClient.auth.onAuthStateChange(() => {
+    const { data: authListener } = SbClient.auth.onAuthStateChange(() => {
       fetchUser();
     });
 

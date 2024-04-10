@@ -2,14 +2,14 @@
 
 import { FC } from "react";
 
-import { SupabaseClient } from "../../utils/SupabaseClient";
-import { Button } from "./Button";
+import { SbClient } from "../../utils/SbClient";
 import { useAuth } from "../../hooks/useAuth";
+import { Button } from "./Button";
 
 export const LogoutButton: FC = () => {
   const { user } = useAuth();
   const onLogoutClick = async () => {
-    const response = await SupabaseClient.auth.signOut();
+    const response = await SbClient.auth.signOut();
 
     if (response.error) {
       console.error("Error signing out:", response.error.message);

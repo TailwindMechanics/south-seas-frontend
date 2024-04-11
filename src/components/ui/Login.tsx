@@ -7,6 +7,14 @@ import { useState } from "react";
 import { SbClient } from "../../utilities/SbClient";
 import { Button } from "./Button";
 
+const inputStyle: string =
+  "w-full rounded-lg border border-gray-300 p-2 focus:outline-none focus:ring-2 focus:ring-blue-500";
+const panelStyle: string = "flex flex-col items-center space-y-2";
+const tabStyle: string =
+  "w-full cursor-pointer px-4 py-2 text-xl focus:outline-none";
+const tabSelectedStyle = "font-semibold text-white underline";
+const tabUnselectedStyle = "text-gray-400";
+
 export const Login = () => {
   const [confirmPassword, setConfirmPassword] = useState<string>("");
   const [statusMessage, setStatusMessage] = useState<string>("");
@@ -46,43 +54,39 @@ export const Login = () => {
     setStatusMessage(message);
     setTimeout(() => {
       setStatusMessage("");
-    }, 3000);
+    }, 3500);
   }
 
   return (
     <>
       <Tab.Group selectedIndex={selectedIndex} onChange={setSelectedIndex}>
         {!user && (
-          <div className="h-full w-full flex-col items-center justify-center">
-            <Tab.List className="flex w-full justify-around rounded-t-lg">
+          <div>
+            <Tab.List className="flex ">
               <Tab
-                className={`w-full cursor-pointer px-4 py-2 text-xl focus:outline-none ${
-                  selectedIndex === 0
-                    ? "font-semibold text-white underline"
-                    : "text-gray-400"
+                className={`${tabStyle} ${
+                  selectedIndex === 0 ? tabSelectedStyle : tabUnselectedStyle
                 }`}>
                 Sign In
               </Tab>
               <Tab
-                className={`w-full cursor-pointer px-4 py-2 text-xl focus:outline-none ${
-                  selectedIndex === 1
-                    ? "font-semibold text-white underline"
-                    : "text-gray-400"
+                className={`${tabStyle} ${
+                  selectedIndex === 1 ? tabSelectedStyle : tabUnselectedStyle
                 }`}>
                 Sign Up
               </Tab>
             </Tab.List>
-            <Tab.Panels className="flex w-full flex-grow flex-col rounded">
-              <Tab.Panel className="flex w-full items-center justify-center">
-                <form className="w-full" onSubmit={onLoginSubmit}>
-                  <div className="flex w-full flex-col items-center space-y-2">
+            <Tab.Panels>
+              <Tab.Panel>
+                <form onSubmit={onLoginSubmit}>
+                  <div className={panelStyle}>
                     <input
                       type="email"
                       placeholder="Email"
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
                       autoComplete="current-password"
-                      className="w-full rounded-lg border border-gray-300 p-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                      className={inputStyle}
                     />
                     <input
                       type="password"
@@ -90,7 +94,7 @@ export const Login = () => {
                       value={password}
                       onChange={(e) => setPassword(e.target.value)}
                       autoComplete="current-password"
-                      className="w-full rounded-lg border border-gray-300 p-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                      className={inputStyle}
                     />
                     <Button type="submit" className="w-full">
                       Login
@@ -101,16 +105,16 @@ export const Login = () => {
                   </div>
                 </form>
               </Tab.Panel>
-              <Tab.Panel className="flex w-full items-center justify-center">
-                <form className="w-full" onSubmit={onSignupSubmit}>
-                  <div className="flex w-full flex-col items-center space-y-2">
+              <Tab.Panel>
+                <form onSubmit={onSignupSubmit}>
+                  <div className={panelStyle}>
                     <input
                       type="email"
                       placeholder="Email"
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
                       autoComplete="current-password"
-                      className="w-full rounded-lg border border-gray-300 p-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                      className={inputStyle}
                     />
                     <input
                       type="password"
@@ -118,7 +122,7 @@ export const Login = () => {
                       value={password}
                       onChange={(e) => setPassword(e.target.value)}
                       autoComplete="current-password"
-                      className="w-full rounded-lg border border-gray-300 p-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                      className={inputStyle}
                     />
                     <input
                       type="password"
@@ -126,7 +130,7 @@ export const Login = () => {
                       value={confirmPassword}
                       onChange={(e) => setConfirmPassword(e.target.value)}
                       autoComplete="current-password"
-                      className="w-full rounded-lg border border-gray-300 p-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                      className={inputStyle}
                     />
                     <Button type="submit" className="w-full">
                       Signup

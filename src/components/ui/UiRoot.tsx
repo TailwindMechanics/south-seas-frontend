@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 
 import { SceneRow } from "../../types/database.types";
 import { SceneName } from "../../data/SceneInfo";
-import { SbClient } from "../../utils/SbClient";
+import { SbClient } from "../../types/SbClient";
 
 export const UiRoot = () => {
   const [payload, setPayload] = useState<SceneRow>();

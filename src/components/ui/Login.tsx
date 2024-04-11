@@ -4,7 +4,7 @@ import { User } from "@supabase/supabase-js";
 import { Tab } from "@headlessui/react";
 import { useState } from "react";
 
-import { SbClient } from "../../utils/SbClient";
+import { SbClient } from "../../types/SbClient";
 import { Button } from "./Button";
 
 export const Login = () => {

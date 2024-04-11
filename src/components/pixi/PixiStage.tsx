@@ -4,7 +4,7 @@ import { Stage, Container } from "@pixi/react";
 
 import { AceDiamonds, TwoHearts } from "../../data/PlayingCardUrls";
 import { PlayingCard } from "./PlayingCard";
-import { X, Y } from "../../utils/Unit";
+import { X, Y } from "../../types/Unit";
 
 export const PixiStage = () => {
   return (

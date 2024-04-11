@@ -16,8 +16,6 @@ export const Login = () => {
   const [email, setEmail] = useState<string>("");
 
   async function onLoginSubmit(event: React.FormEvent<HTMLFormElement>) {
-    console.log("onLoginSubmit");
-
     event.preventDefault();
 
     const response = await SbClient.auth.signInWithPassword({
@@ -28,14 +26,11 @@ export const Login = () => {
     if (response.error) {
       SetStatusAndClear(response.error.message);
     } else {
-      console.log("User signed in:", response.data.user);
       setUser(response.data.user);
     }
   }
 
   async function onSignupSubmit(event: React.FormEvent<HTMLFormElement>) {
-    console.log("onSignupSubmit");
-
     event.preventDefault();
 
     const response = await SbClient.auth.signUp({ email, password });
@@ -43,7 +38,6 @@ export const Login = () => {
     if (response.error) {
       SetStatusAndClear(response.error.message);
     } else {
-      console.log("User signed up:", response.data.user);
       setUser(response.data.user);
     }
   }

@@ -22,8 +22,12 @@ export const AuthProvider: FC<AuthProviderProps> = (props) => {
 
   useEffect(() => {
     const fetchUser = async () => {
-      const currentUser = await SbClient.auth.getUser();
-      setUser(currentUser.data.user);
+      const response = await SbClient.auth.getSession();
+      if (!response.error && response.data.session) {
+        setUser(response.data.session.user);
+      } else {
+        setUser(null);
+      }
     };
 
     fetchUser();

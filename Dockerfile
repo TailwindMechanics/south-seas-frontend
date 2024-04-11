@@ -17,10 +17,12 @@ RUN pnpm install
 # Copy source code
 COPY . .
 
+# Assign env vars
+ENV VITE_SUPABASE_URL=$VITE_SUPABASE_URL  
+ENV VITE_SUPABASE_KEY=$VITE_SUPABASE_KEY
+
 # Build app
-RUN VITE_SUPABASE_URL=$VITE_SUPABASE_URL \
-    VITE_SUPABASE_KEY=$VITE_SUPABASE_KEY \
-    pnpm run build
+RUN pnpm run build
 
 # Production image  
 FROM nginx:alpine

@@ -44,7 +44,7 @@ south-seas-frontend
 │  ├─ types
 │  │  ├─ database.types.ts
 │  │  └─ types.d.ts
-│  ├─ utils
+│  ├─ utilities
 │  │  ├─ SbClient.ts
 │  │  └─ Unit.ts
 │  └─ vite-env.d.ts

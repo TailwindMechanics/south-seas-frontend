@@ -3,7 +3,7 @@
 import { FC, createContext, useEffect, useState } from "react";
 import { User } from "@supabase/supabase-js";
 
-import { SbClient } from "../types/SbClient.ts";
+import { SbClient } from "../utilities/SbClient.ts";
 
 interface AuthContextType {
   user: User | null;

@@ -2,7 +2,7 @@
 
 import { FC } from "react";
 
-import { SbClient } from "../../types/SbClient";
+import { SbClient } from "../../utilities/SbClient";
 import { useAuth } from "../../hooks/useAuth";
 import { Button } from "./Button";
 

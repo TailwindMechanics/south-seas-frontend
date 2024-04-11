@@ -10,7 +10,7 @@ import { Login } from "./components/ui/Login";
 function App() {
   return (
     <div className="flex h-full w-full items-center justify-center bg-zinc-900">
-      <div className="flex w-1/3 flex-col space-y-2 rounded-md bg-zinc-600 p-4 shadow-2xl">
+      <div className="flex w-1/3 flex-col space-y-2 rounded-md bg-zinc-600 px-4 py-2 shadow-2xl">
         <AuthProvider>
           <LoggedIn>
             <MainMenu />

@@ -1,6 +1,6 @@
 //path: src\components\pages\LandingPage.tsx
 
-import { FC, useEffect } from "react";
+import { FC } from "react";
 
 import { useAuthUser } from "../../hooks/useAuthUser";
 import { MainMenu } from "../ui/MainMenu";
@@ -9,9 +9,7 @@ import { Login } from "../ui/Login";
 export const LandingPage: FC = () => {
   const { user, loading } = useAuthUser();
 
-  useEffect(() => {
-    console.log("user", user);
-  }, [user]);
+  console.log("user", user);
 
   if (loading) {
     return <div>Loading...</div>;

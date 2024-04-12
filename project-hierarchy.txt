@@ -20,13 +20,15 @@ south-seas-frontend
 ├─ src
 │  ├─ App.tsx
 │  ├─ components
+│  │  ├─ pages
+│  │  │  ├─ GamePage.tsx
+│  │  │  └─ LandingPage.tsx
 │  │  ├─ pixi
 │  │  │  ├─ PixiStage.tsx
 │  │  │  └─ PlayingCard.tsx
 │  │  └─ ui
+│  │     ├─ AuthedSession.tsx
 │  │     ├─ Button.tsx
-│  │     ├─ LoggedIn.tsx
-│  │     ├─ LoggedOut.tsx
 │  │     ├─ Login.tsx
 │  │     ├─ LogoutButton.tsx
 │  │     ├─ MainMenu.tsx
@@ -38,7 +40,8 @@ south-seas-frontend
 │  │  └─ SceneInfo.ts
 │  ├─ hooks
 │  │  ├─ AuthProvider.tsx
-│  │  └─ useAuth.tsx
+│  │  ├─ useAuthSession.tsx
+│  │  └─ useAuthUser.tsx
 │  ├─ index.css
 │  ├─ main.tsx
 │  ├─ types

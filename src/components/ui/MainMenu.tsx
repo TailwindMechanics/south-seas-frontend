@@ -1,21 +1,24 @@
 //path: src\components\ui\MainMenu.tsx
 
+import { useNavigate } from "react-router-dom";
 import { FC } from "react";
 
+import { LogoutButton } from "./LogoutButton";
 import { Button } from "./Button";
 
-interface MainMenuProps {
-  onNewGameClick?: () => void;
-  onJoinGameClick?: () => void;
-  onSettingsClick?: () => void;
-}
+export const MainMenu: FC = () => {
+  const navigate = useNavigate();
 
-export const MainMenu: FC<MainMenuProps> = (props) => {
+  const navTo = (path: string) => {
+    navigate(path);
+  };
+
   return (
     <>
-      <Button onClick={props.onNewGameClick}>New Game</Button>
-      <Button onClick={props.onJoinGameClick}>Join Game</Button>
-      <Button onClick={props.onSettingsClick}>Settings</Button>
+      <Button onClick={() => navTo("/game")}>New Game</Button>
+      <Button onClick={() => console.log("Join Game")}>Join Game</Button>
+      <Button onClick={() => console.log("Settings")}>Settings</Button>
+      <LogoutButton />
     </>
   );
 };

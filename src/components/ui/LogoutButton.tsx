@@ -2,12 +2,15 @@
 
 import { FC } from "react";
 
+import { useAuthUser } from "../../hooks/useAuthUser";
 import { SbClient } from "../../utilities/SbClient";
-import { useAuth } from "../../hooks/useAuth";
 import { Button } from "./Button";
 
-export const LogoutButton: FC = () => {
-  const { user } = useAuth();
+interface LogoutButtonProps {
+  className?: string;
+}
+export const LogoutButton: FC<LogoutButtonProps> = (props) => {
+  const { user } = useAuthUser();
   const onLogoutClick = async () => {
     await SbClient.auth.signOut();
   };
@@ -16,7 +19,9 @@ export const LogoutButton: FC = () => {
     <>
       {user && (
         <>
-          <Button className="w-full" onClick={onLogoutClick}>
+          <Button
+            className={`${props.className} w-full`}
+            onClick={onLogoutClick}>
             Logout
           </Button>
           <span>Logged in as: {user.email}</span>

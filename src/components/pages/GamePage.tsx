@@ -5,9 +5,9 @@ import { FC } from "react";
 
 import { AceDiamonds, TwoHearts } from "../../data/PlayingCardUrls";
 import { AuthedSession } from "../ui/AuthedSession";
+import { LogoutButton } from "../ui/LogoutButton";
 import { PlayingCard } from "../pixi/PlayingCard";
 import { X, Y } from "../../utilities/Unit";
-import { LogoutButton } from "../ui/LogoutButton";
 
 export const GamePage: FC = () => {
   return (
